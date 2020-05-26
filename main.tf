@@ -8,7 +8,6 @@ resource "scaleway_k8s_cluster_beta" "this" {
   tags              = var.tags
   feature_gates     = var.feature_gates
   admission_plugins = var.admission_plugins
-  default_pool      = var.default_pool
   region            = var.region
   organization_id   = var.organization_id
 

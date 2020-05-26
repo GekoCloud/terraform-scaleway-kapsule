@@ -37,7 +37,7 @@ variable "tags" {
   description = "(Optional) The tags associated with the Kubernetes cluster."
 }
 
-variable "enable_autoscaler_config" {
+variable "enable_cluster_autoscaler" {
   default     = false
   type        = bool
   description = "(Optional) Enables the Kubernetes cluster autoscaler."
