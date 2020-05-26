@@ -9,7 +9,7 @@ variable "description" {
   description = "(Optional) A description for the Kubernetes cluster."
 }
 
-variable "version" {
+variable "k8s_version" {
   type        = string
   description = "(Required) The version of the Kubernetes cluster."
 }

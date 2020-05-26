@@ -1,7 +1,7 @@
 resource "scaleway_k8s_cluster_beta" "this" {
   name              = var.name
   description       = var.description
-  version           = var.version
+  version           = var.k8s_version
   cni               = var.cni
   enable_dashboard  = var.enable_dashboard
   ingress           = var.ingress
