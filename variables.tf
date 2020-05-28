@@ -100,13 +100,13 @@ variable "enable_auto_upgrade" {
 variable "maintenance_window_start_hour" {
   default     = null
   type        = string
-  description = "(Optional) The start hour (UTC) of the 2-hour auto upgrade maintenance window (0 to 23)."
+  description = "(Optional) The start hour (UTC) of the 2-hour auto upgrade maintenance window (0 to 23). Required if enable_auto_upgrade is true"
 }
 
 variable "maintenance_window_day" {
   default     = null
   type        = string
-  description = "(Optional) The day of the auto upgrade maintenance window (monday to sunday, or any)."
+  description = "(Optional) The day of the auto upgrade maintenance window (monday to sunday, or any). Required if enable_auto_upgrade is true"
 }
 
 variable "feature_gates" {
@@ -131,4 +131,9 @@ variable "organization_id" {
   default     = null
   type        = string
   description = "(Defaults to provider organization_id) The ID of the organization the cluster is associated with."
+}
+
+variable "node_pools" {
+  type        = map
+  description = "(Required) A map defining node pools for the cluster."
 }

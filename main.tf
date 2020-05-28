@@ -37,5 +37,20 @@ resource "scaleway_k8s_cluster_beta" "this" {
   }
 }
 
+resource "scaleway_k8s_pool_beta" "this" {
+  for_each    = var.node_pools
 
-
+  cluster_id          = scaleway_k8s_cluster_beta.this.id
+  name                = each.key
+  node_type           = each.value.node_type
+  size                = each.value.size
+  min_size            = lookup(each.value, "min_size", "1")
+  max_size            = lookup(each.value, "max_size", each.value.size)
+  tags                = lookup(each.value, "tags", [])
+  placement_group_id  = lookup(each.value, "placement_group_id", null)
+  autoscaling         = lookup(each.value, "autoscaling", false)
+  autohealing         = lookup(each.value, "autohealing", false)
+  container_runtime   = lookup(each.value, "container_runtime", "docker")
+  region              = lookup(each.value, "region", null)
+  wait_for_pool_ready = lookup(each.value, "wait_for_pool_ready", false)
+}
