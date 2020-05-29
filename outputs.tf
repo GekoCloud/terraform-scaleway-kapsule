@@ -1,3 +1,7 @@
+output "scaleway_k8s_cluster_beta_name" {
+  value = scaleway_k8s_cluster_beta.this.name
+}
+
 output "scaleway_k8s_cluster_beta_id" {
   value = scaleway_k8s_cluster_beta.this.id
 }
