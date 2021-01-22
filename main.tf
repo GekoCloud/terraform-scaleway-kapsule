@@ -1,4 +1,4 @@
-resource "scaleway_k8s_cluster_beta" "this" {
+resource "scaleway_k8s_cluster" "this" {
   name              = var.name
   description       = var.description
   version           = var.k8s_version
@@ -37,7 +37,7 @@ resource "scaleway_k8s_cluster_beta" "this" {
   }
 }
 
-resource "scaleway_k8s_pool_beta" "this" {
+resource "scaleway_k8s_pool" "this" {
   for_each    = var.node_pools
 
   cluster_id          = scaleway_k8s_cluster_beta.this.id
