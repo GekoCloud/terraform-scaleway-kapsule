@@ -4,7 +4,7 @@ Terraform module which creates Kapsule resources on Scaleway
 
 ## Terraform versions
 
-Terraform 0.12
+Terraform 0.13
 
 ## Usage
 
@@ -18,7 +18,7 @@ module "kapsule" {
 
   node_pools = {
     "default" = {
-      "node_type" = "DEV1_L"
+      "node_type" = "dev1_l"
       "size"      = 1
     }
   }

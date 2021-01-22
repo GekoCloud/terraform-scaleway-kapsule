@@ -40,7 +40,7 @@ resource "scaleway_k8s_cluster" "this" {
 resource "scaleway_k8s_pool" "this" {
   for_each    = var.node_pools
 
-  cluster_id          = scaleway_k8s_cluster_beta.this.id
+  cluster_id          = scaleway_k8s_cluster.this.id
   name                = each.key
   node_type           = each.value.node_type
   size                = each.value.size
