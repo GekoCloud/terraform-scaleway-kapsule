@@ -127,11 +127,11 @@ variable "region" {
   description = "(Defaults to provider region) The region in which the cluster should be created."
 }
 
-variable "organization_id" {
-  default     = null
-  type        = string
-  description = "(Defaults to provider organization_id) The ID of the organization the cluster is associated with."
-}
+# variable "organization_id" {
+#   default     = null
+#   type        = string
+#   description = "(Defaults to provider organization_id) The ID of the organization the cluster is associated with."
+# }
 
 variable "node_pools" {
   type        = map

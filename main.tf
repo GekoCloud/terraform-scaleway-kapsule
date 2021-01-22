@@ -9,7 +9,7 @@ resource "scaleway_k8s_cluster" "this" {
   feature_gates     = var.feature_gates
   admission_plugins = var.admission_plugins
   region            = var.region
-  organization_id   = var.organization_id
+  #organization_id   = var.organization_id
 
   dynamic "autoscaler_config" {
     for_each = var.enable_cluster_autoscaler ? [1] : []
